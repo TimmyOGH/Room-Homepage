@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    overflow: hidden;
+}
+
+#main_wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.upper_wrapper {
+    width: 100%;
+    height: 65%;
+    display: flex;
+}
+
+.upper_nav_img_wrapper {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Nav bar */
+
+.navbar {
+    height: 40px;
+    position: absolute;
+    top: 10.5%;
+    left: 7.5%;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 2rem;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.nav_items {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: hsl(0, 0%, 100%);
+}
+
+.nav_items .item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav_items .item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    border-bottom: 2.5px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.nav_items .item:hover::after {
+    border-color: hsl(0, 0%, 100%);
+}
+
+.nav_items .item.active:hover::after {
+    border-color: hsl(0, 0%, 0%);
+}
+
+/* Upper */
+
+.upper_img_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.upper_img_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: translate 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.upper_img_wrapper img.visible {
+    opacity: 1;
+}
+
+.upper_content_wrapper {
+    width: 40%;
+    padding: 65px;
+    position: relative;
+}
+
+.upper_content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.upper_content_slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.upper_content_slider div {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    opacity: 0;
+    overflow-y: scroll;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.upper_content_slider div.visible {
+    opacity: 1;
+}
+
+.upper_content_slider p:first-child {
+    color: hsl(0, 0%, 0%);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.upper_content_slider p:nth-child(2) {
+    color: hsl(0, 0%, 63%);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.shopnow_btn {
+    border: none;
+    background: transparent;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 15px;
+    color: hsl(0, 0%, 0%);
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.shopnow_btn svg {
+    margin-left: 20px;
+}
+
+.shopnow_btn svg path {
+    transition: fill 0.3s ease;
+}
+
+.shopnow_btn:hover {
+    color: hsl(0, 0%, 63%);
+}
+
+.shopnow_btn:hover svg path {
+    fill: hsl(0, 0%, 63%);
+}
+
+.angles_wrapper {
+    width: 25%;
+    height: 70px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: left 0.3s ease;
+}
+
+.angles_wrapper div:first-child {
+    width: 50%;
+    height: 100%;
+    background-color: hsl(0, 0%, 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.angles_wrapper div:first-child:hover {
+    background-color: hsl(0, 0%, 27%);
+}
+
+.angles_wrapper div:last-child {
+    width: 50%;
+    height: 100%;
+    background-color: hsl(0, 0%, 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.angles_wrapper div:last-child:hover {
+    background-color: hsl(0, 0%, 27%);
+}
+
+@media screen and (max-width: 1118px) {
+    .angles_wrapper {
+        left: -25%;
+    }
+}
+
+/* Lower */
+
+.lower_wrapper {
+    width: 100%;
+    height: 35%;
+    display: flex;
+}
+
+.lower_img_wrapper_one {
+    width: 30%;
+    height: 100%;
+}
+
+.lower_img_wrapper_one img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lower_content_wrapper {
+    width: 40%;
+    height: 100%;
+    padding: 40px;
+    overflow-y: scroll;
+}
+
+.lower_content_wrapper p:first-child {
+    color: hsl(0, 0%, 0%);
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.lower_content_wrapper p:last-child {
+    color: hsl(0, 0%, 63%);
+    line-height: 1.3;
+}
+
+.lower_img_wrapper_two {
+    width: 30%;
+    height: 100%;
+}
+
+.lower_img_wrapper_two img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Scroll Bar Styles */
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #727d71;
+}
+
+/* Tablet Size */
+@media screen and (max-width: 994px) {
+    #main_wrapper {
+        overflow-y: scroll;
+    }
+
+    .upper_wrapper,
+    .lower_wrapper {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .upper_nav_img_wrapper,
+    .upper_content_wrapper,
+    .lower_img_wrapper_one,
+    .lower_content_wrapper,
+    .lower_img_wrapper_two {
+        width: 100%;
+    }
+
+    .upper_content_wrapper {
+        position: static;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .upper_content_slider {
+        display: flex;
+    }
+
+    .upper_content_slider div {
+        transition: translate 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .lower_content_wrapper {
+        text-align: center;
+    }
+
+    .lower_img_wrapper_one img,
+    .lower_img_wrapper_two img {
+        max-height: 400px;
+    }
+
+    .angles_wrapper {
+        bottom: 0;
+        left: 75%;
+    }
+}
+
+/* Mobile Size */
+@media screen and (max-width: 700px) {
+    .upper_content_wrapper {
+        padding: 40px;
+    }
+
+    .upper_content_wrapper,
+    .lower_content_wrapper {
+        text-align: left;
+    }
+
+    .menubar {
+        width: 100%;
+        position: absolute;
+        top: 15%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+
+    .burger_wrapper {
+        width: 5%;
+        height: 100%;
+        position: absolute;
+        left: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    .lower_content_wrapper {
+        height: 50%;
+        padding: 40px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
